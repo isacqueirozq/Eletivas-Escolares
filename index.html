@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Inscrição de Eletivas</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Formulário de Inscrição</h1>
+    <form id="inscricaoForm" class="space-y-4">
+      <div>
+        <label class="block font-semibold mb-1">Nome do Aluno:</label>
+        <input type="text" id="nomeAluno" required class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Selecione a Eletiva:</label>
+        <select id="eletiva" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+           <option value="valor1">Valor 1</option>
+           <option value="valor2" selected>Valor 2</option>
+           <option value="valor3">Valor 3</option>
+        </select>
+      </div>
+      <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Inscrever</button>
+    </form>
+    <p id="mensagem" class="mt-4 text-center font-semibold"></p>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
