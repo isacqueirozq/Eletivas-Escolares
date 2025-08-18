@@ -1,5 +1,5 @@
 async function carregarEletivas() {
-  const res = await fetch('/server.js');///api/eletivas
+  const res = await fetch('/api/eletivas');
   const data = await res.json();
   const select=document.getElementById('eletiva');
   select.innerHTML='';
