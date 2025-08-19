@@ -3,7 +3,7 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 async function carregarEletivas() {
-  const { data, error } = await supabase
+  const { data:eletivas, error } = await supabase
     .from('eletivas')
     .select('id, nome')
     .order('nome', { ascending: true });
