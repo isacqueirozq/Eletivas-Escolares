@@ -2,8 +2,9 @@ const supabaseUrl = 'https://tjetblccvbqclecjosyq.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqZXRibGNjdmJxY2xlY2pvc3lxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxMjE4OTgsImV4cCI6MjA3MDY5Nzg5OH0.yQ3kWbccNw3J6cCi62UU1UvWuMUWkeAGnEVzYCjJQOk';
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
+
 async function carregarEletivas() {
-  const { data:eletivas, error } = await supabase
+  const { data, error } = await supabase
     .from('eletivas')
     .select('id, nome')
     .order('nome', { ascending: true });
@@ -18,7 +19,7 @@ async function carregarEletivas() {
     return;
   }
 
-  if (data.length === 0) {
+  if (!data || data.length === 0) {
     const option = document.createElement('option');
     option.textContent = 'Nenhuma eletiva cadastrada';
     select.appendChild(option);
